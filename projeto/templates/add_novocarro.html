@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Novo Carro</title>
+
+</head>
+<body>
+    <h1>Adicionar Novo Carro</h1>
+    <form action="/adicionar_carro" method="post">
+        <label for="marca">Marca:</label>
+        <input type="text" id="marca" name="marca" required><br><br>
+        
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required><br><br>
+
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria" required>
+            <option value="">Selecione...</option>
+            <option value="Passeio">Passeio</option>
+            <option value="Esportivo">Esportivo</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Luxo">Luxo</option>
+            <option value="Off-Road">Off-Road</option>
+        </select><br><br>
+        
+
+        <input type="submit" value="Adicionar Carro">
+    </form>
+</body>
+</html>

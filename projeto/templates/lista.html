@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros</title>
+</head>
+<body>
+    <h1>Lista de Carros</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Categoria</th>
+                <th>Disponível</th>
+                <th>Tornar Indisponível</th> 
+                <th>Tornar Disponível</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for carro in carros %}
+            <tr>
+                <td>{{ carro.id }}</td>
+                <td>{{ carro.marca }}</td>
+                <td>{{ carro.modelo }}</td>
+                <td>{{ carro.categoria }}</td>
+                <td>{{ carro.disponivel }}</td>
+                <td>
+                    <form action="/tornar_indisponivel" method="post">
+                        <input type="hidden" name="id_carro" value="{{ carro.id }}">
+                        <input type="submit" value="Tornar Carro Indisponível">
+                    </form>
+                </td>
+                <td>
+                    <form action="/tornar_disponivel" method="post">
+                        <input type="hidden" name="id_carro" value="{{ carro.id }}">
+                        <input type="submit" value="Tornar Carro Disponível">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
