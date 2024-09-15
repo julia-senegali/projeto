@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Carros</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/carros')
+            .then(response => response.json())
+            .then(data => {
+                const listaCarros = document.getElementById('lista-carros');
+                data.forEach(carro => {
+                    const item = document.createElement('li');
+                    item.textContent = `ID: ${carro.id}, Marca: ${carro.marca}, Modelo: ${carro.modelo}`;
+                    listaCarros.appendChild(item);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar carros:', error));
+        });
+    </script>
+</head>
+<body>
+    <h1>Lista de Carros</h1>
+    <ul id="lista-carros"></ul>
+</body>
+</html>

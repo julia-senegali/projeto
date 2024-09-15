@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locação de Carros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .car-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+        }
+        .car-item {
+            width: 250px;
+            background-color: #fff;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .car-item img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Aluguel de Carros</h1>
+            <p>Encontre o carro ideal para sua viagem!</p>
+            <p>Venha fazer sua locação no endereço: Rodovia Washington Luis, km 235 - São Carlos - SP - BR
+                CEP: 13565-905</p>
+            <a href="{{ url_for('lista') }}" class="button">Ver carros disponíveis</a>
+        </div>
+    </header>
+
+    <section id="lista-carros">
+        <div class="container">
+            <h2>Carros Disponíveis</h2>
+            <ul class="car-list">
+                <li class="car-item">
+                    <img src="{{ url_for('static', filename='imgs/honda-civic.jpg') }}" alt="Carro 1">
+                    <h3>Civic 2018</h3>
+                    <p>Marca: Honda</p>
+                    <p>Modelo: Civic</p>
+                    <p>Categoria: Passeio</p>
+                </li>
+                <li class="car-item">
+                    <img src="{{ url_for('static', filename='imgs/kwid.jpg') }}" alt="Carro 2">
+                    <h3>Kwid 2020</h3>
+                    <p>Marca: Renault</p>
+                    <p>Modelo: Kwid</p>
+                    <p>Categoria: Passeio</p>
+                </li>
+                <li class="car-item">
+                    <img src="{{ url_for('static', filename='imgs/civic.jpg') }}" alt="Carro 3">
+                    <h3>Corolla 2019</h3>
+                    <p>Marca: Toyota</p>
+                    <p>Modelo: Corolla</p>
+                    <p>Categoria: Passeio</p>
+                </li>
+                
+                <li class="car-item">
+                    <img src="{{ url_for('static', filename='imgs/fiorino.jpg') }}" alt="Carro 3">
+                    <h3>Fiorino 2020</h3>
+                    <p>Marca: Fiat</p>
+                    <p>Modelo: Fiorino</p>
+                    <p>Categoria:  Comercial</p>
+                </li>
+
+                <li class="car-item">
+                    <img src="{{ url_for('static', filename='imgs/mercedes.jpg') }}" alt="Carro 3">
+                    <h3>Mercedes-Benz 2021</h3>
+                    <p>Marca: S-Class</p>
+                    <p>Modelo: Mercedes-Benz</p>
+                    <p>Categoria: Luxo</p>
+                </li>
+                <li class="car-item">
+                    <img src="{{ url_for('static', filename='imgs/a8.jpg') }}" alt="Carro 3">
+                    <h3>A8 2024</h3>
+                    <p>Marca: Audi</p>
+                    <p>Modelo: A8</p>
+                    <p>Categoria: Luxo</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+</body>
+</html>
